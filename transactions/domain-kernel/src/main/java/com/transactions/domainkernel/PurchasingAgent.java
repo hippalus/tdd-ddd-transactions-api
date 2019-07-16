@@ -57,13 +57,12 @@ public class PurchasingAgent {
         }
 
         public PurchasingAgent build() {
-            //todo custom exception
             if ( this.firstName == null ) {
-                throw new RuntimeException( "First Name is required " );
+                throw new PropertyRequiredException("Purchasing Agent","First Name");
 
             } else if ( this.lastName == null ) {
-                throw new RuntimeException( "Last Name is required " );
-            } else if ( this.email == null ) throw new RuntimeException( "Email is required" );
+                throw new PropertyRequiredException("Purchasing Agent","Last Name");
+            } else if ( this.email == null ) throw new PropertyRequiredException("Purchasing Agent","email");
             return new PurchasingAgent( this.firstName, this.lastName, this.email );
         }
 

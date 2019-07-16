@@ -41,9 +41,8 @@ public class Product {
         }
 
         public Product get() {
-            //todo Custom Exception
-            if ( this.name == null ) throw new RuntimeException( "Product name is required" );
-            if ( this.price == null) throw new RuntimeException( "Product price is required" );
+            if ( this.name == null ) throw new PropertyRequiredException( "Product","name" );
+            if ( this.price == null) throw new PropertyRequiredException( "Product","price" );
 
             return new Product( this.name, this.price );
         }

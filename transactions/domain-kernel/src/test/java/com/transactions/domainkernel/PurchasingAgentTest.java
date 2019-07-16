@@ -24,17 +24,17 @@ public class PurchasingAgentTest {
     @Test
      void  should_throw_ValidationException_when_no_email_specified(){
         Exception exception=assertThrows( RuntimeException.class,()->PurchasingAgent.aNew().firstName( firstName ).lastName( lastName).build() );
-        assertEquals( "Email is required",exception.getMessage() );
+        assertEquals( "Property email of model Purchasing Agent must not be null !",exception.getMessage() );
     }
     @Test
     void  should_throw_ValidationException_when_no_firstName_specified(){
         Exception exception=assertThrows( RuntimeException.class,()->PurchasingAgent.aNew().email( email ).lastName( lastName).build() );
-        assertEquals( "First Name is required ",exception.getMessage() );
+        assertEquals( "Property First Name of model Purchasing Agent must not be null !",exception.getMessage() );
     }
     @Test
     void  should_throw_ValidationException_when_no_lastName_specified(){
         Exception exception=assertThrows( RuntimeException.class,()->PurchasingAgent.aNew().email( email ).firstName( firstName).build() );
-        assertEquals( "Last Name is required ",exception.getMessage() );
+        assertEquals( "Property Last Name of model Purchasing Agent must not be null !",exception.getMessage() );
     }
 
     @Test
