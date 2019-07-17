@@ -3,15 +3,38 @@ package com.transactions.domainkernel;
 import static com.transactions.domainkernel.TransactionState.*;
 
 public class Transaction {
-
-    private Product product;
-    private String code;
+    private Long id;
+    private final PurchasingAgent agent;
+    private final Product product;
+    private  String code;
     private TransactionState state = WAITING_APPROVE;
 
-    public Transaction(Product product, String transactionCode) {
+
+    public Transaction(PurchasingAgent agent, Product product) {
+        this.agent = agent;
+        this.product = product;
+    }
+
+    public Transaction(PurchasingAgent agent, Product product, String transactionCode) {
+        this.agent=agent;
         this.product = product;
         this.code = transactionCode;
 
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public PurchasingAgent getAgent() {
+        return agent;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+    public Money getPrice() {
+        return this.product.getPrice();
     }
 
     public String getProductName() {
@@ -24,6 +47,10 @@ public class Transaction {
 
     public String getCode() {
         return this.code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public static Builder aNew() {
@@ -54,6 +81,12 @@ public class Transaction {
 
         private Product product;
         private String code;
+        private PurchasingAgent agent;
+
+        public Builder agent(PurchasingAgent agent) {
+            this.agent = agent;
+            return this;
+        }
 
         public Builder product(Product product) {
             this.product = product;
@@ -73,7 +106,8 @@ public class Transaction {
                 throw new PropertyRequiredException( "Transaction", "product" );
             }
 
-            return new Transaction( product, code );
+            return new Transaction(agent, product, code );
         }
+
     }
 }

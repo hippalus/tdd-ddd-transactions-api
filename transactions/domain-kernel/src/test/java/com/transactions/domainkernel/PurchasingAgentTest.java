@@ -64,6 +64,13 @@ public class PurchasingAgentTest {
         assertFalse(agent1.equals(agent2));
     }
 
+    @Test
+    void should_buy_product_then_generate_transaction(){
+        Transaction transaction=this.agent.buy(Product.aNew().name( "Hard Disc" ).price( Money.of( 300d )).get());
+        transaction.setCode( "TR123" );
+        assertEquals(Money.of( 300d ),transaction.getPrice());
+    }
+
 
 
 }
