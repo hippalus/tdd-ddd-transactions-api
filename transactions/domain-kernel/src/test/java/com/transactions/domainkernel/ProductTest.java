@@ -9,7 +9,7 @@ public class ProductTest {
 
     @Test
     public void should_have_name_and_price(){
-        Product product= Product.aNew().name("USB Disc").price( Money.of( 100d ) ).get();
+        var product= Product.aNew().name("USB Disc").price( Money.of( 100d ) ).get();
         assertEquals( "USB Disc" ,product.getName());
         assertEquals( Money.of( 100d ),product.getPrice() );
     }

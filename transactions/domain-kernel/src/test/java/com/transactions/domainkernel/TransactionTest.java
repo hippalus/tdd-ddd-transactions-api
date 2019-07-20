@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TransactionTest {
     private String trCode="TR123";
     private Product product= Product.aNew().name( "USB Disc" ).price(Money.of( 100d)).get();
-    Transaction transaction=Transaction.aNew().product( product ).code( trCode ).build();
+    Transaction transaction=Transaction.aNew().product( product ).withCode( trCode ).build();
     @Test
     void should_have_product_info_with_trx_code(){
 
@@ -20,12 +20,12 @@ public class TransactionTest {
     void should_throw_PropertyRequiredException_if_no_trCode_specified(){
 
         Exception ex=assertThrows( PropertyRequiredException.class,()-> Transaction.aNew().product( product ).build());
-        assertEquals( "Property code of model Transaction must not be null !",ex.getMessage() );
+        assertEquals( "Property withCode of model Transaction must not be null !",ex.getMessage() );
     }
     @Test
     void should_throw_PropertyRequiredException_if_no_product_specified(){
 
-        Exception ex=assertThrows( PropertyRequiredException.class,()-> Transaction.aNew().code( trCode ).build());
+        Exception ex=assertThrows( PropertyRequiredException.class,()-> Transaction.aNew().withCode( trCode ).build());
         assertEquals( "Property product of model Transaction must not be null !",ex.getMessage() );
     }
     @Test

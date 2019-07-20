@@ -9,17 +9,15 @@ public class Transaction {
     private  String code;
     private TransactionState state = WAITING_APPROVE;
 
-
-    public Transaction(PurchasingAgent agent, Product product) {
-        this.agent = agent;
-        this.product = product;
-    }
-
     public Transaction(PurchasingAgent agent, Product product, String transactionCode) {
         this.agent=agent;
         this.product = product;
         this.code = transactionCode;
 
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getId() {
@@ -47,10 +45,6 @@ public class Transaction {
 
     public String getCode() {
         return this.code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public static Builder aNew() {
@@ -94,14 +88,14 @@ public class Transaction {
 
         }
 
-        public Builder code(String transactionCode) {
+        public Builder withCode(String transactionCode) {
             this.code = transactionCode;
             return this;
         }
 
         public Transaction build() {
             if ( code == null ) {
-                throw new PropertyRequiredException( "Transaction", "code" );
+                throw new PropertyRequiredException( "Transaction", "withCode" );
             } else if ( product == null ) {
                 throw new PropertyRequiredException( "Transaction", "product" );
             }

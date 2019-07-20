@@ -35,10 +35,9 @@ public class PurchasingAgent {
         return new Builder();
     }
 
-    public Transaction buy(Product product) {
-        return new Transaction( this,product );
+    public Transaction.Builder buy(Product product) {
+        return Transaction.aNew().product(product).agent(this);
     }
-
     public static class Builder {
 
         private String firstName;
