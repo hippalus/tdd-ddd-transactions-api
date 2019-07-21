@@ -1,9 +1,6 @@
 package com.transactions.domainkernel;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -15,7 +12,7 @@ public class Accounting {
     private final AtomicLong idGenerator = new AtomicLong( 0 );
 
     public Map<PurchasingAgent, List<Transaction>> getAgentTransactions() {
-        return agentTransactions;
+        return Collections.unmodifiableMap( agentTransactions);
     }
 
     public Accounting(Money limit) {
