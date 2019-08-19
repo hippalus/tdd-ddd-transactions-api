@@ -1,4 +1,4 @@
-package com.transactions.rest.portweb.service;
+package com.transactions.rest.portweb.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransactionSearchRequest {
-    private AgentToSearch  agent;
+    private AgentToSearch agent;
 
 }

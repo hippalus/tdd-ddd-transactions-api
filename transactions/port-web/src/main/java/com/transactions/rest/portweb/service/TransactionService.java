@@ -2,7 +2,11 @@ package com.transactions.rest.portweb.service;
 
 import com.transactions.aplicationlayer.*;
 import com.transactions.domainkernel.PurchasingAgent;
-import com.transactions.domainkernel.Transaction;
+import com.transactions.rest.portweb.request.TransactionSaveRequest;
+import com.transactions.rest.portweb.request.TransactionSearchRequest;
+import com.transactions.rest.portweb.response.TransactionResponse;
+import com.transactions.rest.portweb.response.TransactionSearchResponse;
+import com.transactions.rest.portweb.response.TransactionsSaveResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

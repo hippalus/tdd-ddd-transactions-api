@@ -3,14 +3,18 @@ package com.transactions.rest.portweb.service;
 import com.transactions.aplicationlayer.*;
 import com.transactions.domainkernel.*;
 
+import com.transactions.rest.portweb.request.AgentToSearch;
+import com.transactions.rest.portweb.request.TransactionSaveRequest;
+import com.transactions.rest.portweb.request.TransactionSearchRequest;
+import com.transactions.rest.portweb.response.TransactionResponse;
+import com.transactions.rest.portweb.response.TransactionSearchResponse;
+import com.transactions.rest.portweb.response.TransactionsSaveResponse;
 import name.falgout.jeffrey.testing.junit.mockito.MockitoExtension;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;

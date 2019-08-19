@@ -1,4 +1,4 @@
-package com.transactions.rest.portweb.service;
+package com.transactions.rest.portweb.response;
 
 import com.transactions.domainkernel.TransactionState;
 import lombok.AllArgsConstructor;
