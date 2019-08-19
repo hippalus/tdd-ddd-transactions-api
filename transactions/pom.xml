@@ -13,6 +13,7 @@
         <module>application-layer</module>
     </modules>
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.18.2</lombok.version>
     </properties>
 
