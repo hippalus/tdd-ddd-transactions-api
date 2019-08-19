@@ -13,6 +13,10 @@ public class TransactionSearchOutput {
         this.transactions = transactions;
     }
 
+    public Map<PurchasingAgent, List<Transaction>> getTransactions() {
+        return transactions;
+    }
+
     public int getAgentsCount() {
         return this.transactions.size();
     }
